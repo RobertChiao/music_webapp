@@ -32,7 +32,3 @@ export function getDiscList() {
     return Promise.resolve(res.data)
   })
 }
-
-export function test(){
-  console.log('在座的都是垃圾')
-}
