@@ -11,6 +11,10 @@ import 'common/stylus/index.styl'
 /* eslint-disable no-unused-vars */
 // import vConsole from 'vconsole'
 
+//确认过眼神，我遇上对的人
+
+
+
 fastclick.attach(document.body)
 
 Vue.use(VueLazyload, {
