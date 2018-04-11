@@ -15,6 +15,10 @@ export default {
       type: Boolean,
       default: true
     },
+    listenScroll: {
+      type: Boolean,
+      default: false
+    },
     data: {
       type: Array,
       default: null
@@ -34,6 +38,13 @@ export default {
         probeType: this.probeType,
         click: this.click
       });
+
+      if (this.listenScroll) {
+        let _this = this;
+        this.scroll.on("scroll", pos => {
+          _this.$emit("scroll", pos);
+        });
+      }
     },
     enable() {
       this.scroll && this.scroll.enable();
