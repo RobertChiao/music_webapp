@@ -50,6 +50,7 @@ export default {
       //当-newY>0的时候
       if (newY > 0) {
         this.currentIndex = 0;
+        return;
       }
       //当在中间部分滚动的时候
       for (let i = 0; i < listHeight.length - 1; i++) {
