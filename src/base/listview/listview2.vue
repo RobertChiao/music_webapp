@@ -46,7 +46,9 @@ export default {
       });
     },
     scrollY(newY) {
-      let listHeight = this.listHeight;
+      const listHeight = this.listHeight;
+      console.log(typeof this.scrollY);
+
       //当-newY>0的时候
       if (newY > 0) {
         this.currentIndex = 0;
@@ -56,7 +58,7 @@ export default {
       for (let i = 0; i < listHeight.length - 1; i++) {
         let height1 = listHeight[i];
         let height2 = listHeight[i + 1];
-        if (-newY > height1 && -newY < height2) {
+        if (-newY >= height1 && -newY < height2) {
           this.currentIndex = i;
           return;
         }
@@ -84,7 +86,7 @@ export default {
       let firstTouch = e.touches[0];
       this.touch.y1 = firstTouch.pageY;
       this.touch.touchIndex = touchIndex;
-      this._scrollTo(touchIndex);
+      this._scrollTo(parseInt(touchIndex));
     },
     onShortcutTouchMove(e) {
       let firstTouch = e.touches[0];
@@ -109,6 +111,9 @@ export default {
       }
     },
     _scrollTo(index) {
+      //   this.currentIndex = index;
+      this.scrollY = -this.listHeight[index];
+      console.log(typeof this.scrollY);
       this.$refs.listview.scrollToElement(this.$refs.listGroup[index], 0);
     }
   },

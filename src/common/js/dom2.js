@@ -15,10 +15,10 @@ export function isHaveClass(el, className) {
 // 获取增加元素属性的常用设计模式
 export function getData(el, name, val) {
   const prefix = 'data-'
-  name = prefix + name
+  // name = prefix + name
   if (val) {
-    return el.setAttribute(name, val)
+    return el.setAttribute(prefix + name, val)
   } else {
-    return el.getAttribute(name)
+    return el.getAttribute(prefix + name)
   }
 }
