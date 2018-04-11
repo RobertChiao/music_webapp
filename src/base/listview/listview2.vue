@@ -49,21 +49,17 @@ export default {
       let firstTouch = e.touches[0];
       this.touch.y1 = firstTouch.pageY;
       this.touch.touchIndex = touchIndex;
-      //   this.$refs.listview.scrollToElement(this.$refs.listGroup[touchIndex]);
       this._scrollTo(touchIndex);
     },
     onShortcutTouchMove(e) {
       let firstTouch = e.touches[0];
       this.touch.y2 = firstTouch.pageY;
       let delta = ((this.touch.y2 - this.touch.y1) / ANCHOR_HEIGHT) | 0;
-      let touchIndex = this.touch.touchIndex + delta;
-      //   this.$refs.listview.scrollToElement(this.$refs.listGroup[touchIndex]);
+      let touchIndex = parseInt(this.touch.touchIndex) + delta;
       this._scrollTo(touchIndex);
-
-      console.log(e);
     },
     _scrollTo(index) {
-      this.$refs.listview.scrollToElement(this.$refs.listGroup[index]);
+      this.$refs.listview.scrollToElement(this.$refs.listGroup[index], 0);
     }
   },
   components: {
