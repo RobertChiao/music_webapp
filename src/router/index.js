@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Recommend from 'components/recommend/recommend2'
+import Recommend from 'components/recommend/recommend3'
 import Singer from 'components/singer/singer2'
 import Rank from 'components/rank/rank2'
 import Search from 'components/search/search2'
